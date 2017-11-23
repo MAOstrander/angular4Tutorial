@@ -10,6 +10,7 @@ import { UserComponent } from './components/user/user.component';
 import { WadoComponent } from './components/wado/wado.component';
 
 import { DataService } from './services/data.service';
+import { CharTextDirective } from './char-text.directive';
 
 const appRoutes: Routes = [
   { path:'', component: UserComponent },
@@ -20,7 +21,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     UserComponent,
-    WadoComponent
+    WadoComponent,
+    CharTextDirective
   ],
   imports: [
     BrowserModule,
