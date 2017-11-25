@@ -18,3 +18,9 @@
     <li>Second</li>
   </ol>
 </div>
+
+<div *ngIf="visible;then oddClicked else evenClicked">This Works</div>
+<button (click)="toggleDiv()">Toggle</button>
+
+<ng-template #oddClicked>Odd number of clicks</ng-template>
+<ng-template #evenClicked>Even number of clicks</ng-template>

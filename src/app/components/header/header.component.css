@@ -1,0 +1,9 @@
+header {
+    text-align: center;
+}
+nav h3 {
+    display: inline;
+}
+nav li, nav ul {
+    display: inline;
+}

@@ -7,10 +7,15 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class WadoComponent implements OnInit {
+  visible:boolean = true;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleDiv() {
+    this.visible = !this.visible
   }
 
 }

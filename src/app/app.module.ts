@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; // <-- Needed for ngModel
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -8,9 +8,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { UserComponent } from './components/user/user.component';
 import { WadoComponent } from './components/wado/wado.component';
+import { HeaderComponent } from './components/header/header.component';
+import { LoginformComponent } from './components/loginform/loginform.component';
+import { FooterComponent } from './components/footer/footer.component';
 
-import { DataService } from './services/data.service';
 import { CharTextDirective } from './char-text.directive';
+import { DataService } from './services/data.service';
 
 const appRoutes: Routes = [
   { path:'', component: UserComponent },
@@ -22,7 +25,10 @@ const appRoutes: Routes = [
     AppComponent,
     UserComponent,
     WadoComponent,
-    CharTextDirective
+    CharTextDirective,
+    HeaderComponent,
+    LoginformComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
