@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserDataService } from '../../services/user-data.service';
 
 @Component({
   selector: 'app-loginform',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginformComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userData: UserDataService) { }
 
   ngOnInit() {
   }
@@ -22,6 +23,7 @@ export class LoginformComponent implements OnInit {
     console.log(`username: ${username}, password: ${password}`);
 
     if (username === 'test' && password === 'test') {
+      this.userData.setUserLoggedIn();
       this.router.navigate(['user']);
     }
 

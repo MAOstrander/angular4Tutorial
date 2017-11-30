@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DataService } from '../../services/data.service';
+import { UserDataService } from '../../services/user-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -16,7 +18,7 @@ export class UserComponent implements OnInit {
   posts:Post[];
   editMode:boolean = false;
 
-  constructor(private dataService:DataService) { 
+  constructor(private dataService:DataService, private userData:UserDataService, private router: Router) { 
     console.log("Constructor ran");
   }
   

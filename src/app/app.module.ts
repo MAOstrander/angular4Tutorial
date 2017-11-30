@@ -14,11 +14,13 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { CharTextDirective } from './char-text.directive';
 import { DataService } from './services/data.service';
+import { UserDataService } from './services/user-data.service';
+import { AuthguardGuard } from './authguard.guard';
 
 const appRoutes: Routes = [
   { path:'', component: LoginformComponent },
-  { path:'user', component: UserComponent },
-  { path:'wado', component: WadoComponent }
+  { path:'user', canActivate: [AuthguardGuard], component: UserComponent },
+  { path:'wado', canActivate: [AuthguardGuard], component: WadoComponent }
 ]
 
 @NgModule({
@@ -37,7 +39,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [DataService],
+  providers: [DataService, UserDataService, AuthguardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
