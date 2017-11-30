@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loginform',
@@ -8,9 +9,23 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class LoginformComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  loginUser(formEvent) {
+    formEvent.preventDefault();
+    console.log(formEvent);
+    var username = formEvent.target.elements[0].value;
+    var password = formEvent.target.elements[1].value;
+    console.log(`username: ${username}, password: ${password}`);
+
+    if (username === 'test' && password === 'test') {
+      this.router.navigate(['user']);
+    }
+
+    return false;
   }
 
 }

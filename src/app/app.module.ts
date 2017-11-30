@@ -16,7 +16,8 @@ import { CharTextDirective } from './char-text.directive';
 import { DataService } from './services/data.service';
 
 const appRoutes: Routes = [
-  { path:'', component: UserComponent },
+  { path:'', component: LoginformComponent },
+  { path:'user', component: UserComponent },
   { path:'wado', component: WadoComponent }
 ]
 
