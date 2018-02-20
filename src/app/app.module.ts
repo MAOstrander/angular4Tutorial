@@ -16,10 +16,12 @@ import { CharTextDirective } from './char-text.directive';
 import { DataService } from './services/data.service';
 import { UserDataService } from './services/user-data.service';
 import { AuthguardGuard } from './authguard.guard';
+import { UserDashComponent } from './user-dash/user-dash.component';
 
 const appRoutes: Routes = [
   { path:'', component: LoginformComponent },
   { path:'user', canActivate: [AuthguardGuard], component: UserComponent },
+  { path:'users/:name', canActivate: [AuthguardGuard], component: UserDashComponent },
   { path:'wado', canActivate: [AuthguardGuard], component: WadoComponent }
 ]
 
@@ -31,7 +33,8 @@ const appRoutes: Routes = [
     CharTextDirective,
     HeaderComponent,
     LoginformComponent,
-    FooterComponent
+    FooterComponent,
+    UserDashComponent
   ],
   imports: [
     BrowserModule,

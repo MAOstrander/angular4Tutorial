@@ -23,6 +23,7 @@ export class LoginformComponent implements OnInit {
     console.log(`username: ${username}, password: ${password}`);
 
     if (username === 'test' && password === 'test') {
+      console.log('yarp')
       this.userData.setUserLoggedIn();
       this.router.navigate(['user']);
     }
